@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="id"></p>
+</body>
+<script>
+    let students= [{
+        name :'farhan',
+        roll : 90
+    }]
+
+    function enrollStudent(newStud , callback12){
+        setTimeout(() => {
+            students.push(newStud)
+            callback12()
+        }, 3000);
+    }
+    function getStudent(){
+        setTimeout(() => {
+            let str = ''
+            students.forEach(function(element){
+                str += element.name+'<br>'
+            }
+            )
+
+            document.getElementById('id').innerHTML= str ;
+        }, 2000);
+    }
+    let newStud = {name:'zaid', roll:55}
+    enrollStudent(newStud , getStudent)
+</script>
+</html>

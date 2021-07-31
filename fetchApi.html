@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+<script>
+console.log('This is my tutorial 42');
+
+// Button with id myBtn
+let myBtn = document.getElementById("myBtn");
+
+// div with id content 
+let content = document.getElementById("content");
+
+// function getData(){
+//     console.log("Started getData")
+//     url = "farhan.txt";
+//     fetch(url).then((response)=>{
+//         console.log("Inside first then");
+//         return response.text();
+//     }).then((data)=>{
+//         console.log("Inside second then")
+//         console.log(data);
+//     })
+// }
+
+// function getData(){
+//     console.log("Started getData")
+//     url = "https://api.github.com/users";
+//     fetch(url).then((kab)=>{
+//         console.log("Inside first then")
+//         return kab.json();
+//     }).then((sab)=>{
+//         console.log("Inside second then")
+//         console.log(sab);
+//     })
+// }
+
+
+function postData(){
+    url = "https://jsonplaceholder.typicode.com/posts";
+    // data = '{" name": "farhan","body":"body"}'
+   let name='farhan'
+   let body='body'
+    params = {
+        method:'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        // body: data
+        body:JSON.stringify({
+            title:name,
+            body1:body
+        })
+    }
+    fetch(url, params).then(response=> response.json())
+    .then(data => console.log(data)
+    )
+}
+
+console.log("Before running getData")
+// getData()
+postData()
+console.log("After running getData")
+</script>
+</body>
+
+</html>

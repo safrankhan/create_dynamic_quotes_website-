@@ -1,0 +1,149 @@
+#outerBox {
+  background-color: #383e4bc2;
+  width: 50vw;
+  height: 75vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: #0f0f0fde;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#innerBox {
+  background-color: rgba(192, 185, 157, 0.678);
+  width: 75%;
+  height: 55vh;
+  text-align: center;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#innerBox #symbol {
+  margin-top: 4rem;
+}
+
+#innerBox #symbol i {
+  float: left;
+  margin-left: 3rem;
+}
+
+#innerBox #button {
+  font-weight: bolder;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-color: rgba(75, 77, 139, 0.425);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  border: none;
+}
+
+#innerBox #button:hover {
+  background-color: rgba(69, 70, 94, 0.795);
+  outline: none;
+  border: none;
+}
+
+#innerBox #author {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-right: 2rem;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+}
+
+#innerBox #qoute {
+  margin-top: 1rem;
+  padding: 0rem 3rem;
+  text-align: justify;
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+#innerBox #img i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation: farhan 2s    ease-in-out;
+          animation: farhan 2s    ease-in-out;
+}
+
+#innerBox #img i:hover {
+  background-color: rgba(255, 255, 255, 0.26);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  border-radius: 12px;
+}
+
+@-webkit-keyframes farhan {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes farhan {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#innerBox::before {
+  content: '';
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  right: 0;
+  border-top: 80px solid #d7dda3;
+  border-left: 80px solid transparent;
+}
+/*# sourceMappingURL=style.css.map */

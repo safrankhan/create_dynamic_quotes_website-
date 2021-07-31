@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sass/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>tweet New Qoutes</title>
+</head>
+
+<body>
+    <div id="outerBox">
+        <div id="innerBox" data-aos="zoom-in">
+            <div id="img"><abbr title="Click me to tweet"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color: #1DA1F2;"></i></abbr></div>
+            <div id="symbol"><i class="fa fa-quote-left fa-3x Quotes" aria-hidden="true"
+                    style="color: rgb(236, 236, 149);"></i></div>
+            <p id="qoute" class="Quotes"> </p>
+            <p id="author" class="Quotes"> </p>
+            <button id="button" onclick="fresh()">
+                New Quotes
+            </button>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+    let tweetqoute ='';
+     $(document).ready(function () {
+            $("#img").click(function () {
+                window.open(`https://twitter.com/intent/tweet?text=${tweetqoute.text}%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20By%20${tweetqoute.author}`)
+
+            });
+
+        });
+    async function qoutes() {
+        const num = Math.floor(Math.random() * 1643)
+        const response = await fetch('https://type.fit/api/quotes');
+        try {
+            const newline = await response.json();
+             tweetqoute = newline[num];
+            document.getElementById('qoute').innerHTML = tweetqoute.text
+            if (tweetqoute.author == null) {
+                tweetqoute.author = undefined
+            }
+            document.getElementById('author').innerHTML = "<h5 style='display:inline'> ~By  </h5>" + tweetqoute.author
+
+        } catch (error) {
+            console.log(error.name, 'not define')
+        }
+
+    }
+    qoutes()
+
+    let fresh = () => { qoutes() }
+    $(document).ready(function () {
+        $("#outerBox").hover(function () {
+            $('#button').show()
+
+        });
+        $("body").hover(function () {
+            $('#button').hide()
+
+        });
+    });
+   
+</script>
+
+</html>
